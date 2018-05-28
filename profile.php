@@ -31,7 +31,8 @@ else {
             <!-- Header -->
             <header id="header">
                 <img src="images/background.jpg">
-                <p class="title">Alexander's <br> Matblogg</p>
+                <p class="title">Alexander's
+                    <br> Matblogg</p>
             </header>
 
             <!-- Main -->
@@ -48,23 +49,20 @@ else {
                         </ul>
                     </nav>
 
-                    <!-- Posts -->
-                    <section class="posts">
-                        <div class="form">
-
+                    <div class="box">
+                        <div class="wrap">
                             <h1>Välkommen</h1>
                             <h3>
                                 <?php echo $first_name.' '.$last_name; ?>
                             </h3>
 
                             <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] ==1) {
-                            echo "<ul class='admin'><h3>Admin</h3><li><a href='admin.php'>Redigera inlägg</a></li><li> <a href='post.php'>Skapa inlägg</a></li></ul>";
+                            echo "<ul class='admin'><h3>Admin</h3><li><a href='admin.php'><button>Redigera inlägg</button></a></li><li> <a href='post.php'><button>Skapa inlägg</button></a></li></ul>";
                             }
                             ?>
-                            <div id="map"></div>
-                            <a href="search.html">Search</a>
-                            <p>
-                                <?php
+                                <div id="map"></div>
+                                <p>
+                                    <?php
 
           // Display message about account verification link only once
           if ( isset($_SESSION['message']) )
@@ -76,23 +74,22 @@ else {
           }
 
           ?>
-                            </p>
-                            <?php
+                                </p>
+                                <?php
 
           // Keep reminding the user this account is not active, until they activate
           if ( !$active ){
               echo
-              '<div class="info">
-              Kontot har inte verifierats, var vänlig att verifiera ditt konto genom länken som har skickats via email<p><?= $email ?>
-                                </p>!
-                        </div>'; } ?>
+              '<p>Kontot har inte verifierats, var vänlig att verifiera ditt konto genom länken som har skickats via email till adressen nedan</p>'.$email; } ?>
 
-                        <a href="logout.php"><button class="button button-block" name="logout">Logga ut</button></a>
+                                    <a href="logout.php">
+                                        <button class="button button-block" name="logout">Logga ut</button>
+                                    </a>
 
+                        </div>
+                    </div>
                 </div>
-                </section>
             </div>
-        </div>
         </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="js/index.js"></script>

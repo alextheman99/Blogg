@@ -55,23 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                 <li class="active"><a href="recept.php">Recept</a></li>
                             </ul>
                         </nav>
-
-                        <!-- Posts -->
-                        <section class="posts">
-                            <article>
-                                <header>
-                                    <hr class="style-eight"> <span class="date">April 24, 2017</span>
-                                    <hr>
-                                </header>
-                                <h2>Filet mignon med Saint-Agur smör</h2>
-                                <img src="images/filet_mignon.jpg">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis hendrerit arcu at vehicula. Suspendisse et est mattis, bibendum nisi in, accumsan risus. Quisque ex mauris, ornare ac libero non, porttitor laoreet mi. Duis tincidunt nibh quis laoreet semper. Suspendisse tortor turpis, pellentesque non est sed, gravida maximus purus. Morbi tortor purus, molestie sit amet risus id, viverra cursus ante. Suspendisse libero ligula, blandit ut quam sit amet, aliquet faucibus risus. Mauris et diam nunc. Ut gravida ante in consequat interdum. Vestibulum aliquet lectus pharetra velit auctor scelerisque. Cras condimentum, metus vitae auctor accumsan, nibh ipsum posuere sapien, sed pellentesque sem eros eu tellus. Sed porttitor laoreet sodales.
-                                    <br> Praesent sagittis tellus massa, at varius velit aliquam ac. Curabitur accumsan turpis id ex sagittis auctor. Vestibulum ut elit vel velit condimentum laoreet in vel libero. </p>
-                                <button><a href="recept.php">Recept hittar du här!</a></button>
-                            </article>
-                        </section>
+             <!-- Content -->
                     </div>
+            <!-- Main -->
                 </div>
+        <!-- Container -->
             </div>
         </body>
 

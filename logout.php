@@ -4,22 +4,51 @@ session_start();
 session_unset();
 session_destroy();
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Error</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+    <!DOCTYPE html>
+    <html lang="sv">
 
-<body>
-    <div class="form">
-          <h1>Thanks for stopping by</h1>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Alexander's Matblogg</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-          <p><?= 'You have been logged out!'; ?></p>
+    <body>
+        <div class="container">
+            <!-- Header -->
+            <header id="header">
+                <img src="images/background.jpg">
+                <p class="title">Alexander's
+                    <br> Matblogg</p>
+            </header>
 
-          <a href="index.php"><button class="button button-block">Home</button></a>
+            <!-- Main -->
+            <div id="main">
+                <div class="content">
 
-    </div>
-</body>
-</html>
+                    <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li><a href="index.php">Start</a></li>
+                            <li class="active"><a href="logga_in.php">Logga in</a></li>
+                            <li><a href="album.php">Album</a></li>
+                            <li><a href="recept.php">Recept</a></li>
+                        </ul>
+                    </nav>
+                    <div class="box">
+                        <div class="form">
+                            <h1>Tack för att du har besökt min blogg</h1>
+
+                            <p>
+                                <?= 'Du har loggats ut!'; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    </html>
