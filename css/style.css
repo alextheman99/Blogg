@@ -303,7 +303,9 @@ textarea {
 }
 
 /* Profile page */
-
+#map {
+    height: 400px;
+}
 
 /* Admin panel */
 

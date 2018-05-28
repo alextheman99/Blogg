@@ -61,6 +61,8 @@ else {
                             echo "<ul class='admin'><h3>Admin</h3><li><a href='admin.php'>Redigera inlägg</a></li><li> <a href='post.php'>Skapa inlägg</a></li></ul>";
                             }
                             ?>
+                            <div id="map"></div>
+                            <a href="search.html">Search</a>
                             <p>
                                 <?php
 
@@ -75,7 +77,6 @@ else {
 
           ?>
                             </p>
-
                             <?php
 
           // Keep reminding the user this account is not active, until they activate
@@ -95,7 +96,8 @@ else {
         </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="js/index.js"></script>
-
+        <script src="js/restaurants.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLj0FQepKTy7AsaZdXwDQ2WsW7HF_mFfg&libraries=places&callback=initMap" async defer></script>
     </body>
 
     </html>
