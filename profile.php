@@ -23,14 +23,15 @@ else {
         <meta charset="UTF-8">
         <title>Välkommen
         </title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
         <div class="container">
             <!-- Header -->
             <header id="header">
-                <a href="index.php"></a> <img src="images/background.jpg">
+                <img src="images/background.jpg">
+                <p class="title">Alexander's <br> Matblogg</p>
             </header>
 
             <!-- Main -->

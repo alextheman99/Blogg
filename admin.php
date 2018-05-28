@@ -2,7 +2,7 @@
 session_start();
 include_once("db.php");
 if(!isset($_SESSION['admin']) && $_SESSION['admin'] != 1) {
-    header("Location: index.php");
+    header("Location: logga_in.php");
     }
 ?>
     <!DOCTYPE html>
@@ -12,14 +12,15 @@ if(!isset($_SESSION['admin']) && $_SESSION['admin'] != 1) {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Alexander's Matblogg</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
         <div class="container">
             <!-- Header -->
             <header id="header">
-                <a href="index.php"></a> <img src="images/background.jpg">
+                <img src="images/background.jpg">
+                <p class="title">Alexander's <br> Matblogg</p>
             </header>
 
             <!-- Main -->
@@ -52,7 +53,7 @@ if(!isset($_SESSION['admin']) && $_SESSION['admin'] != 1) {
             $title = $row['title'];
             $date = $row['date'];
 
-            $admin = "<div><a href='del_post.php?pid=$id'>Delete></a>&nbsp;<a href='edit_post.php?pid=$id'>Edit></a></div>";
+            $admin = "<div><a href='del_post.php?pid=$id'>Radera></a>&nbsp;<a href='edit_post.php?pid=$id'>Redigera></a></div>";
 
             $posts .= "<article><header><hr><span>$date</span><hr></header><h2>$title</h2>$admin</article>";
         }

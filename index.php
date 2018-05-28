@@ -9,14 +9,15 @@ include_once("db.php");
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Alexander's Matblogg</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
         <div class="container">
             <!-- Header -->
             <header id="header">
-                <a href="index.php"></a> <img src="images/background.jpg">
+                <img src="images/background.jpg">
+                <p class="title">Alexander's <br> Matblogg</p>
             </header>
 
             <!-- Main -->
