@@ -55,7 +55,7 @@ include_once("db.php");
             $content = $row['content'];
             $date = $row['date'];
 
-            $posts .= "<article><hr><span><h3>$date</h3></span><hr><h2>$title</h2><img></img><p>$content</p></article>";
+            $posts .= "<article pid=$id><hr><span><h3>$date</h3></span><hr><h2>$title</h2><img></img><p>$content</p></article>";
         }
         echo $posts;
     } else {

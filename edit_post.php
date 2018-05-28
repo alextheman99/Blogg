@@ -3,9 +3,16 @@ session_start();
 include_once("db.php");
 if(!isset($_SESSION['admin']) && $_SESSION['admin'] != 1) {
     header("Location: index.php");
+    return;
     }
 
-if(isset($_POST['post'])) {
+if(!isset($_GET['pid'])) {
+    header("Location: index.php");
+}
+
+$pid = $_GET['pid'];
+
+if(isset($_POST['update'])) {
     $title = strip_tags($_POST['title']);
     $content = strip_tags($_POST['content']);
     $title = mysqli_real_escape_string($mysqli, $title);
@@ -13,7 +20,7 @@ if(isset($_POST['post'])) {
 
     $date = date('l jS \of F Y h:i:s A');
 
-    $sql = "INSERT INTO posts (title, content, date) VALUES ('$title', '$content', '$date')";
+    $sql = "Update posts SET title='$title', content='$content', date='$date' WHERE id=$pid";
 
     if($title == "" || $content == "") {
 echo "Var vänlig att gör färdig ditt inlägg!";
@@ -56,20 +63,33 @@ echo "Var vänlig att gör färdig ditt inlägg!";
                                 echo "<li><a href=\"profile.php\">Min profil</a></li>";
                             }
                            ?>
-                            <li><a href="album.php">Album</a></li>
-                            <li><a href="recept.php">Recept</a></li>
+                                <li><a href="album.php">Album</a></li>
+                                <li><a href="recept.php">Recept</a></li>
                         </ul>
                     </nav>
                     <div class="box">
                         <div class="form">
-                            <form action="post.php" method="post" enctype="multipart/form-data">
-                                <div class="field-wrap">
-                                    <input placeholder="Titel" name="title" type="text" autofocus size="48"><br><br>
-                                    <input type="file" name="image">
-                                    <textarea placeholder="Innehåll" name="content" rows="20" cols="50"></textarea><br>
-                                </div>
-                                <button type="submit" class="button button-block" name="post" value="Post">Skapa</button>
-                            </form>
+                            <?php
+                            $sql_get = "SELECT * FROM posts WHERE id=$pid LIMIT 1";
+                            $res = mysqli_query($mysqli, $sql_get);
+
+                            if(mysqli_num_rows($res) > 0) {
+                                while ($row = mysqli_fetch_assoc($res)) {
+                                    $title = $row['title'];
+                                    $content = $row['content'];
+
+                                   echo "<form action='edit_post.php?pid=$pid' method='post' enctype='multipart/form-data'>
+                                    <div class='field-wrap'>
+                                        <input placeholder='Titel' name='title' type='text' autofocus size='48'><br><br>
+                                        <input type='file' name='image'>
+                                        <textarea placeholder='Innehåll' name='content' rows='20' cols='50'></textarea><br>
+                                    </div>";
+                                }
+                            }
+                            ?>
+
+                                <button type="submit" class="button button-block" name="update">Uppdatera</button>
+                                </form>
                         </div>
                     </div>
                 </div>
