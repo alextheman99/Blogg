@@ -13,6 +13,7 @@ session_start();
     </head>
 
     <body>
+        <!-- Container -->
         <div class="container">
             <!-- Header -->
             <header id="header">
@@ -22,6 +23,7 @@ session_start();
 
             <!-- Main -->
             <div id="main">
+                <!-- Content -->
                 <div class="content">
 
                     <!-- Nav -->
@@ -39,8 +41,11 @@ session_start();
                             <li><a href="recept.php">Recept</a></li>
                         </ul>
                     </nav>
+                    <!-- Content -->
                 </div>
+                <!-- Main -->
             </div>
+            <!-- Container -->
         </div>
     </body>
 

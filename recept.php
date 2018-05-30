@@ -2,65 +2,60 @@
 require 'db.php';
 session_start();
 ?>
-    <!DOCTYPE html>
-    <html lang="sv">
+<!DOCTYPE html>
+<html lang="sv">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Alexander's Matblogg</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-    if (isset($_POST['login'])) { //user logging in
-
-        require 'login.php';
-
-    }
-
-    elseif (isset($_POST['register'])) { //user registering
-
-        require 'register.php';
-
-    }
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alexander's Matblogg</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if (isset($_POST['login'])) { //user logging in
+ require 'login.php';
+} elseif (isset($_POST['register'])) { //user registering
+require 'register.php';
+}
 }
 ?>
 
-        <body>
-            <div class="container">
-                <!-- Header -->
-                <header id="header">
-                <img src="images/background.jpg">
-                <p class="title">Alexander's <br> Matblogg</p>
-            </header>
+<body>
+    <!-- Container -->
+    <div class="container">
+        <!-- Header -->
+        <header id="header">
+            <img src="images/background.jpg">
+            <p class="title">Alexander's
+                <br> Matblogg</p>
+        </header>
 
-                <!-- Main -->
-                <div id="main">
-                    <div class="content">
+        <!-- Main -->
+        <div id="main">
+            <!-- Content -->
+            <div class="content">
 
-                        <!-- Nav -->
-                        <nav id="nav">
-                            <ul class="links">
-                                <li><a href="index.php">Start</a></li>
-                                <?php
-                            if (isset($_SESSION['logged_in']) != 1 ){
-                                echo "<li><a href=\"logga_in.php\">Logga in</a></li>";
-                            } else {
-                                echo "<li><a href=\"profile.php\">Min profil</a></li>";
-                            }
-                           ?>
-                                <li><a href="album.php">Album</a></li>
-                                <li class="active"><a href="recept.php">Recept</a></li>
-                            </ul>
-                        </nav>
-             <!-- Content -->
-                    </div>
-            <!-- Main -->
-                </div>
-        <!-- Container -->
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul class="links">
+                        <li><a href="index.php">Start</a></li>
+                        <?php
+                    if (isset($_SESSION['logged_in']) != 1 ){
+                        echo "<li><a href=\"logga_in.php\">Logga in</a></li>";
+                    } else {
+                        echo "<li><a href=\"profile.php\">Min profil</a></li>";
+                    }
+                   ?>
+                            <li><a href="album.php">Album</a></li>
+                            <li class="active"><a href="recept.php">Recept</a></li>
+                    </ul>
+                </nav>
+                <!-- Content -->
             </div>
-        </body>
-
-    </html>
+            <!-- Main -->
+        </div>
+        <!-- Container -->
+    </div>
+</body>
+</html>

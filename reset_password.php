@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = $mysqli->escape_string($_POST['email']);
         $hash = $mysqli->escape_string($_POST['hash']);
 
-        $sql = "UPDATE anvandare SET losen='$new_password', hash='$hash' WHERE email='$email'";
+        $sql = "UPDATE users SET losen='$new_password', hash='$hash' WHERE email='$email'";
 
         if ( $mysqli->query($sql) ) {
 
