@@ -63,7 +63,44 @@ $active = $_SESSION['active'];
                     }
                     ?>
                         <!-- Map div, displays Google maps API -->
-                        <div id="map"></div>
+<?php
+
+//units=For temperature in Celsius use units=metric
+//5128638 is new york ID
+
+$url = "http://api.openweathermap.org/data/2.5/weather?id=5128638&lang=en&units=metric&APPID=e8071bc8a89c8b72d529aeda15a775a1";
+
+
+$contents = file_get_contents($url);
+$clima=json_decode($contents);
+
+$temp_max=$clima->main->temp_max;
+$temp_min=$clima->main->temp_min;
+$icon=$clima->weather[0]->icon.".png";
+//how get today date time PHP :P
+$today = date("F j, Y, g:i a");
+$cityname = $clima->name;
+
+echo "<div class='temp'>";
+echo $cityname . " - " .$today . "<br>";
+echo "Temp Max: " . $temp_max ."&deg;C<br>";
+echo "Temp Min: " . $temp_min ."&deg;C<br>";
+echo "<img src='http://openweathermap.org/img/w/" . $icon ."'/ >";
+echo "</div>";
+?>
+                        <p>
+                            <?php
+
+  // Display message about account verification link only once
+  if ( isset($_SESSION['message']) )
+  {
+      echo $_SESSION['message'];
+
+      //Only display message once so it doesn't become repetitive
+      unset( $_SESSION['message'] );
+  }
+
+  ?>
                         <p>
                             <?php
 

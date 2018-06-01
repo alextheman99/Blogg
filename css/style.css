@@ -322,7 +322,7 @@ textarea {
     color: #9b1725;
 }
 
-#map {
+.temp {
     height: 400px;
     width: 100%;
     margin-bottom: 40px;
