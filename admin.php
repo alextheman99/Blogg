@@ -55,7 +55,7 @@ if(mysqli_num_rows($res) > 0) {
         $title = $row['title'];
         $date = $row['date'];
 
-        $admin = "<div><a href='del_post.php?pid=$id'>Radera></a>&nbsp;<a href='edit_post.php?pid=$id'>Redigera></a></div>";
+        $admin = "<div><button><a href='del_post.php?pid=$id'>Radera></a></button<br><button><a href='edit_post.php?pid=$id'>Redigera></a></button</div>";
 
         $posts .= "<article><header><hr><span>$date</span><hr></header><h2>$title</h2>$admin</article>";
     }
